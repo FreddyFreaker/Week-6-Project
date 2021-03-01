@@ -2,13 +2,15 @@
     
     padding: 0;
     margin: 0;
+    overflow: auto;
 }
 
 #grid-container{
     display: grid;
     grid-template-areas:    
     'header header header header header header'
-    'menu main main main right right'
+    'menu   menu   menu   menu   menu   menu   '
+    'main main main main right right'
     'footer footer footer footer footer footer';
     
     grid-gap: 10px;
@@ -21,19 +23,58 @@ header{
     text-align: center;
     grid-area: header;
     background-color: darkgrey;
+    font-size: xx-large;
 }
 
 nav{
+    display: grid;
     grid-area: menu;
-   background-color: gray;
-   padding: 20px 0 ;
+    grid-template-columns: auto auto auto auto auto;
+    flex-wrap: wrap;
+    
+   
+   padding: 20px;
+   margin: 0;
+    
+    
+    
+}
 
+a:link{
+    
+    background-color: lightgrey;
+    border: 2px solid black;
+    padding: 3px 3px;
+    text-align: center;
+    text-decoration: none;
+    display:flex ;
+    gap: 4px;
+
+} 
+
+a:hover{
+    background-color: white ;
 }
 
 
 article{
     grid-area: main;
+    text-align: left;
+    border: 2px solid black;
+    width: 600px;
+    padding-left: 3;
+    padding-bottom: 5;
+    margin: 0;
+
     
+}
+
+#img{
+    display: flex;
+    border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
 }
 
 aside{
@@ -42,6 +83,38 @@ aside{
 
 }
 
+#baker{
+    display: grid;
+    max-width: 100%;
+    height: auto;
+    float: right;
+    overflow: auto;
+}
+
+#country{
+    display: grid;
+    max-width: 100%;
+    height: auto;
+    float: left;
+    overflow: auto;
+}
+
+#content{
+    display: grid;
+    position: relative;
+    top: 120;
+    right: 300;
+    
+    
+}
+
+#related{
+   display: grid;
+   text-align: left; 
+    
+}
+
+
 footer{
     grid-area: footer;
     text-align: center;
@@ -49,6 +122,26 @@ footer{
     display: flex;
     background-color: darkgray;
 }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+ 
 
 
 @media (max-width: 769px) {
@@ -64,5 +157,10 @@ footer{
     nav{
         text-align: center;
     }
+
+    .column {
+        flex: 100%;
+        max-width: 100%;
+      }
 
 }
